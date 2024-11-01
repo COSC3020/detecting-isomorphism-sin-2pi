@@ -1,5 +1,4 @@
 const fs = require('fs');
-const jsc = require('jsverify');
 
 eval(fs.readFileSync('code.js')+'');
 
@@ -89,7 +88,6 @@ const graphL = [
     [1],
     []
 ];
-
 
 const tests = [
     { func: are_isomorphic, graph1: graphA, graph2: graphB, result: true, name: 'Isomorphic Test' },
