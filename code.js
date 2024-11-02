@@ -62,5 +62,6 @@ function are_isomorphic(graph1, graph2) {
     mapping[i] = undefined;
   }
 
-  return isValid(0, n, used, mapping, graph1, graph2);
+  return buildMapping(0, n, used, mapping, graph1, graph2);
+
 }
