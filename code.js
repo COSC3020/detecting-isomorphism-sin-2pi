@@ -10,10 +10,25 @@ function calculateNodeConnections(adjacencyList) {
 
 function isValid(sourceGraph, targetGraph, vertexMap, size) {
   for (let src = 0; src < size; src++) {
-    for (let dest = 0; dest < size; dest++) {
-      let sourceHasEdge = sourceGraph[src].includes(dest);
-      let targetHasEdge = targetGraph[vertexMap[src]].includes(vertexMap[dest]);
-      if (sourceHasEdge !== targetHasEdge) {
+    let sourceEdges = sourceGraph[src];
+    let targetEdges = targetGraph[vertexMap[src]];
+
+    if (sourceEdges.length !== targetEdges.length) {
+      return false;
+    }
+
+    for (let i = 0; i < sourceEdges.length; i++) {
+      let mappedEdge = vertexMap[sourceEdges[i]];
+      let found = false;
+
+      for (let j = 0; j < targetEdges.length; j++) {
+        if (targetEdges[j] === mappedEdge) {
+          found = true;
+          break;
+        }
+      }
+
+      if (!found) {
         return false;
       }
     }
