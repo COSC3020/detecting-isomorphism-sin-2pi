@@ -24,6 +24,6 @@ What is the worst-case big $\Theta$ time complexity of your algorithm?
 
 **buildMapping()** there are $V!$ ways that $V$ nodes can be mapped, resulting in $V!$. Each time **buildMapping()** is called, **isValid()** is triggered as well. This results in $\Theta (V! * V^2)$.
 
-**are_isomorphic()** We have a two for loops, going over $V$ elements each in this function. $V + V = 2V = \Theta (V)$
+**are_isomorphic()** there are two for loops, going over $V$ elements each in this function. $V + V = 2V = \Theta (V)$
 
 Therefore, $VlogV + V + (V! \cdot V^2) \cdot V ∈ \Theta (V! * V^3)$
